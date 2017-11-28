@@ -1,9 +1,6 @@
 package com.lkf.java8;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.toList;
@@ -21,13 +18,21 @@ public class lambda {
         apple1.setColor("blue");
         apple1.setWeight(5);
         Apple apple2 = new Apple();
-        apple2.setColor("yellow");
+        apple2.setColor("red");
         apple2.setWeight(4);
         List<Apple> list = new ArrayList<>();
         list.add(apple);
         list.add(apple1);
         list.add(apple2);
-        List<String> colorList = list.stream()
+
+        //Map<Apple.Color,List<Apple>> map = list.stream().collect(groupingBy(Apple :: getColor));
+
+        /*int sum = list.stream()
+                .mapToInt(Apple::getWeight)
+                .sum();
+        System.out.println(sum);*/
+
+        /*List<String> colorList = list.stream()
                 .filter(apple3 -> {
                     System.out.println(apple3.getWeight());
                     return apple3.getWeight() > 3;
@@ -38,8 +43,7 @@ public class lambda {
                     return apple4.getColor();
                 })
                 .limit(1)//取出颜色
-                .collect(toList());
-        //colorList.forEach(color -> System.out.println(color));
+                .collect(toList());*/
 
 
     }
